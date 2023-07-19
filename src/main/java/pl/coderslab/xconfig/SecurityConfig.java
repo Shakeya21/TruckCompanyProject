@@ -50,6 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/create-user").permitAll()
                 .antMatchers("/driver/**").hasAnyAuthority("Admin", "User", "Dispatch")
                 .antMatchers("/admin/**").hasAnyAuthority("Admin")
                 .antMatchers("/dispatch/**").hasAnyAuthority("Admin", "Dispatch")
