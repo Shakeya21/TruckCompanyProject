@@ -6,4 +6,5 @@ import pl.coderslab.zdatabase.Role;
 public interface RoleRepository extends JpaRepository<Role, Long> {
     RoleRepository findRoleById(Long id);
     Role findByRoleName(String roleName);
+
 }

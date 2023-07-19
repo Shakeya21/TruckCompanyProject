@@ -54,7 +54,7 @@ public class AdminController {
         String login = generateUniqueLogin(employees.getFirstName(), employees.getLastName());
         user.setUsername(login);
         user.setEmail(employees.getEmail());
-        user.setEmployees(employees);
+//        user.setEmployees(employees);
 //        user.setPassword(generateRandomPassword());
 //        user.setUserAccs(Set.of(user));
 //        user.setRoles(Set.of(new Role()));
@@ -91,11 +91,11 @@ public class AdminController {
         existing.setDateOfBirth(employees.getDateOfBirth());
         existing.setLicenseNumber(employees.getLicenseNumber());
 
-        UserAcc userAcc = userRepository.findUserAccByEmployeesId(existing.getId());
-        userAcc.setEmail(existing.getEmail());
-
-        userRepository.save(userAcc);
-        adminRepository.save(existing);
+//        UserAcc userAcc = userRepository.findUserAccByEmployeesId(existing.getId());
+//        userAcc.setEmail(existing.getEmail());
+//
+//        userRepository.save(userAcc);
+//        adminRepository.save(existing);
         return "redirect:/admin/list";
     }
 
@@ -109,9 +109,9 @@ public class AdminController {
     @PostMapping("/delete/{id}")
     public String deleteEmployeePost(@PathVariable long id, Model model) {
         Employees employees = adminRepository.findEmployeesById(id);
-        UserAcc userAcc = userRepository.findUserAccByEmployeesId(employees.getId());
-        userRepository.delete(userAcc);
-        adminRepository.delete(employees);
+//        UserAcc userAcc = userRepository.findUserAccByEmployeesId(employees.getId());
+//        userRepository.delete(userAcc);
+//        adminRepository.delete(employees);
         return "redirect:/admin/list";
     }
 

@@ -4,16 +4,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.admin.AdminRepository;
 import pl.coderslab.zdatabase.Employees;
 import pl.coderslab.zdatabase.Role;
 import pl.coderslab.zdatabase.UserAcc;
 
 import javax.validation.Valid;
+import java.util.Arrays;
+import java.util.HashSet;
 
 @Controller
 @RequestMapping("/admin/account")
@@ -65,5 +64,18 @@ public class AccountController {
         adminRepository.save(employeesById);
         return "redirect:/admin/list";
 
+    }
+
+    @GetMapping("/create-user")
+    @ResponseBody
+    public String createUser() {
+        UserAcc user = new UserAcc();
+        user.setUsername("admin");
+        user.setPassword(passwordEncoder.encode("admin"));
+
+        Role userRole = roleRepository.findByRoleName("ROLE_USER");
+        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
+        userAccRepository.save(user);
+        return "admin";
     }
 }

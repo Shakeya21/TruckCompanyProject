@@ -16,9 +16,6 @@ public class UserAcc {
     private String username;
     private String password;
     private String email;
-    @OneToOne
-    @MapsId
-    private Employees employees;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
@@ -80,11 +77,4 @@ public class UserAcc {
         this.email = email;
     }
 
-    public Employees getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(Employees employees) {
-        this.employees = employees;
-    }
 }

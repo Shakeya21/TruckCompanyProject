@@ -9,7 +9,7 @@ import pl.coderslab.zdatabase.UserAcc;
 public interface UserRepository extends JpaRepository<UserAcc, Long> {
     boolean existsByUsername(String username);
 
-    UserAcc findUserAccByEmployeesId(long id);
+//    UserAcc findUserAccByEmployeesId(long id);
 
     UserAcc findByUsername(String username);
 
