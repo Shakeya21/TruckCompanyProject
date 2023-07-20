@@ -8,9 +8,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-    </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
 <%--    <meta charset="utf-8">--%>
 <%--    <meta http-equiv="X-UA-Compatible" content="IE=edge">--%>
 <%--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--%>
@@ -69,21 +69,21 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="../../theme/vendor/jquery/jquery.min.js"></script>
-<script src="../../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../../theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../../theme/js/sb-admin-2.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="../../theme/vendor/chart.js/Chart.min.js"></script>
+<script src="/vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="../../theme/js/demo/chart-area-demo.js"></script>
-<script src="../../theme/js/demo/chart-pie-demo.js"></script>
+<script src="/js/demo/chart-area-demo.js"></script>
+<script src="/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

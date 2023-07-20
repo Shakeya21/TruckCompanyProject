@@ -22,7 +22,6 @@ import java.util.Set;
 public class AdminController {
     private final AdminRepository adminRepository;
     private final UserRepository userRepository;
-
     private final RoleRepository roleRepository;
 
     public AdminController(AdminRepository adminRepository, UserRepository userRepository, RoleRepository roleRepository) {
@@ -110,6 +109,7 @@ public class AdminController {
     public String deleteEmployeePost(@PathVariable long id, Model model) {
         Employees employees = adminRepository.findEmployeesById(id);
         UserAcc userAcc = userRepository.findUserAccByEmployeesId(employees.getId());
+        userAcc.getRoles().clear();
         userRepository.delete(userAcc);
         adminRepository.delete(employees);
         return "redirect:/admin/list";

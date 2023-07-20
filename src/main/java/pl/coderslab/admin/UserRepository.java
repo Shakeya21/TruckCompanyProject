@@ -8,10 +8,9 @@ import pl.coderslab.zdatabase.UserAcc;
 
 public interface UserRepository extends JpaRepository<UserAcc, Long> {
     boolean existsByUsername(String username);
-
-    UserAcc findUserAccByEmployeesId(long id);
-
     UserAcc findByUsername(String username);
+
+    UserAcc findUserAccByEmployeesId(Long id);
 
 //    @Query("SELECT u FROM UserAcc u WHERE u.email = :email")
 //    UserAcc findByEmail(@Param("email") String email);

@@ -40,6 +40,10 @@ public class UserAcc {
 //        this.userAccs = userAccs;
 //    }
 
+    public UserAcc() {
+        this.roles = new HashSet<>();
+    }
+
     public Set<Role> getRoles() {
         return roles;
     }

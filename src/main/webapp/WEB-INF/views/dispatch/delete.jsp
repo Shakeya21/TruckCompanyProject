@@ -5,6 +5,8 @@
   Time: 10:24
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../resources/headerDispatch.jsp" %>
 <div class="container-fluid">
@@ -16,10 +18,10 @@
     </div>
     <h2>Jesteś pewny/a, że chcesz usunąć zlecenie dla firmy ${transportOrder.contractors.name}
         o id ${transportOrder.id}</h2>
-    <form action="/dispatch/delete/${transportOrder.id}" method="post">
+    <form:form modelAttribute="transportOrder">
         <input type="button" value="Cancel" onclick="window.location.href='/dispatch/list'" class="btn btn-danger">
         <input type="submit" value="Confirm" class="btn btn-primary">
-    </form>
+    </form:form>
 </div>
 <%@ include file="../resources/footer.jsp" %>
 

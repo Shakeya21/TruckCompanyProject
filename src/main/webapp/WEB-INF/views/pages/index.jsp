@@ -17,6 +17,6 @@
     </div>
     <div class="row">
     </div>
-    <center><img src="theme/gif/main.gif" alt="Hello everyone!"/></center>
+    <center><img src="/gif/main.gif" alt="Hello everyone!"/></center>
 </div>
 <%@ include file="../resources/footer.jsp" %>

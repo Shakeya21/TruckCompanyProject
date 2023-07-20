@@ -33,6 +33,9 @@ public class FirstUserController {
     @GetMapping("/create-user")
     @ResponseBody
     public String createUser() {
+        if (userAccRepository.existsByUsername("admin")){
+            return "Użytkownik już istnieje";
+        }
         Employees employees = new Employees();
         employees.setFirstName("Admin");
         employees.setLastName("Admin");

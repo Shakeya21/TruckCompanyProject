@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: jessika
@@ -16,9 +17,9 @@
     </div>
 <h2>Jesteś pewny/a, że chcesz zakończyć zlecenie dla firmy ${ordersActive.contractors.name}
     o id ${ordersActive.contractors.id} z dnia ${ordersActive.date}</h2>
-<form action="/driver/list/end/${ordersActive.id}" method="post">
+<form:form modelAttribute="ordersActive">
     <input type="button" value="Cancel" onclick="window.location.href='/driver/list/active'" class="btn btn-danger">
     <input type="submit" value="Confirm" class="btn btn-primary">
-</form>
+</form:form>
 </div>
 <%@ include file="../resources/footer.jsp" %>
